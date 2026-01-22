@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Bellissime Brow and Lashes | Productos Profesionales de Cejas y Pestañas",
-  description: "Especialistas en microblading, extensiones de pestañas, laminado y tinte. Productos profesionales de alta calidad para cejas y pestañas. Miami, FL.",
+  title: "Bellissime Brow & Lashes | Micropigmentación, Extensiones, Faciales y Depilación Láser",
+  description: "Transformando vidas a través del detalle. 7 años de experiencia en micropigmentación, extensiones de pestañas, faciales y depilación láser. Venta de insumos profesionales.",
 };
 
 export default function RootLayout({
@@ -23,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="es">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

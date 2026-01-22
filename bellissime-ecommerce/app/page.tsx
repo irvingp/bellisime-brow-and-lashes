@@ -11,15 +11,53 @@ interface CartItem {
 }
 
 export default function Home() {
-  const [cart, setCart] = useState<CartItem[]>([])
+  const [cart] = useState<CartItem[]>([])
+
+  const services = [
+    {
+      id: 1,
+      title: "Extensiones de Pestañas",
+      description: "Realza tu mirada con nuestras extensiones de pestañas premium. Técnicas personalizadas para un look natural o dramático.",
+      icon: "👁️",
+      gradient: "from-pink-500 to-rose-500"
+    },
+    {
+      id: 2,
+      title: "Micropigmentación",
+      description: "Cejas perfectas las 24 horas. Técnicas de microblading y powder brows para resultados naturales y duraderos.",
+      icon: "✨",
+      gradient: "from-purple-500 to-pink-500"
+    },
+    {
+      id: 3,
+      title: "Faciales",
+      description: "Tratamientos faciales personalizados para rejuvenecer y cuidar tu piel con productos de alta calidad.",
+      icon: "💆",
+      gradient: "from-rose-500 to-pink-500"
+    },
+    {
+      id: 4,
+      title: "Depilación Láser",
+      description: "Tecnología de última generación para una depilación permanente, segura y efectiva.",
+      icon: "⚡",
+      gradient: "from-pink-500 to-purple-500"
+    },
+    {
+      id: 5,
+      title: "Venta de Insumos",
+      description: "Productos profesionales de micropigmentación para artistas y profesionales de la belleza.",
+      icon: "🛍️",
+      gradient: "from-purple-500 to-rose-500"
+    }
+  ]
 
   const featuredProducts = [
     {
       id: 1,
-      name: "Microblading Kit Profesional",
-      price: 299.99,
+      name: "Kit Completo de Micropigmentación",
+      price: 499.99,
       image: "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=500&h=500&fit=crop",
-      category: "Cejas"
+      category: "Micropigmentación"
     },
     {
       id: 2,
@@ -30,31 +68,31 @@ export default function Home() {
     },
     {
       id: 3,
-      name: "Tinte para Cejas Orgánico",
-      price: 45.99,
+      name: "Pigmentos Profesionales Set",
+      price: 145.99,
       image: "https://images.unsplash.com/photo-1596704017254-9b121068ec31?w=500&h=500&fit=crop",
-      category: "Cejas"
+      category: "Micropigmentación"
     },
     {
       id: 4,
-      name: "Sérum de Crecimiento para Pestañas",
-      price: 65.99,
-      image: "https://images.unsplash.com/photo-1571875257727-256c39da42af?w=500&h=500&fit=crop",
-      category: "Pestañas"
-    },
-    {
-      id: 5,
-      name: "Kit de Laminado de Cejas",
-      price: 129.99,
-      image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=500&h=500&fit=crop",
-      category: "Cejas"
-    },
-    {
-      id: 6,
       name: "Adhesivo para Pestañas Profesional",
       price: 34.99,
       image: "https://images.unsplash.com/photo-1515688594390-b649af70d282?w=500&h=500&fit=crop",
       category: "Pestañas"
+    },
+    {
+      id: 5,
+      name: "Agujas de Micropigmentación",
+      price: 79.99,
+      image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=500&h=500&fit=crop",
+      category: "Micropigmentación"
+    },
+    {
+      id: 6,
+      name: "Kit de Cuidado Post-Tratamiento",
+      price: 45.99,
+      image: "https://images.unsplash.com/photo-1571875257727-256c39da42af?w=500&h=500&fit=crop",
+      category: "Cuidado"
     }
   ]
 
@@ -74,20 +112,15 @@ export default function Home() {
             <div className="hidden md:flex space-x-8">
               <Link href="/" className="text-gray-700 hover:text-pink-600 transition-colors font-medium">Inicio</Link>
               <Link href="/productos" className="text-gray-700 hover:text-pink-600 transition-colors font-medium">Productos</Link>
-              <Link href="/servicios" className="text-gray-700 hover:text-pink-600 transition-colors font-medium">Servicios</Link>
-              <Link href="/sobre-nosotros" className="text-gray-700 hover:text-pink-600 transition-colors font-medium">Sobre Nosotros</Link>
-              <Link href="/contacto" className="text-gray-700 hover:text-pink-600 transition-colors font-medium">Contacto</Link>
+              <Link href="#servicios" className="text-gray-700 hover:text-pink-600 transition-colors font-medium">Servicios</Link>
+              <Link href="#instalaciones" className="text-gray-700 hover:text-pink-600 transition-colors font-medium">Instalaciones</Link>
+              <Link href="#contacto" className="text-gray-700 hover:text-pink-600 transition-colors font-medium">Contacto</Link>
             </div>
 
             <div className="flex items-center space-x-4">
               <button className="text-gray-700 hover:text-pink-600 transition-colors">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
-              </button>
-              <button className="text-gray-700 hover:text-pink-600 transition-colors">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                 </svg>
               </button>
               <Link href="/carrito" className="relative text-gray-700 hover:text-pink-600 transition-colors">
@@ -111,17 +144,23 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <h1 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight">
-                Realza tu <span className="bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">Belleza Natural</span>
+                <span className="bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">Bellissime</span>
+                <br />
+                Brow & Lashes
               </h1>
-              <p className="text-xl text-gray-600">
-                Especialistas en microblading, extensiones de pestañas, laminado y tinte. Productos profesionales de alta calidad desde Miami, FL.
+              <p className="text-xl text-gray-600 leading-relaxed">
+                Nuestra historia nace del amor por la belleza y del profundo deseo de transformar vidas a través del detalle. 
+                Durante siete años hemos dedicado nuestras manos, nuestro tiempo y nuestro corazón a este arte.
+              </p>
+              <p className="text-lg text-gray-600">
+                Un espacio más humano, más íntimo y más nuestro, donde cada persona se siente escuchada, valorada y celebrada.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link href="/productos" className="bg-gradient-to-r from-pink-600 to-purple-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg transition-all transform hover:scale-105">
-                  Comprar Ahora
-                </Link>
-                <Link href="/servicios" className="bg-white text-pink-600 px-8 py-4 rounded-full font-semibold border-2 border-pink-600 hover:bg-pink-50 transition-all">
+                <Link href="#servicios" className="bg-gradient-to-r from-pink-600 to-purple-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg transition-all transform hover:scale-105">
                   Ver Servicios
+                </Link>
+                <Link href="/productos" className="bg-white text-pink-600 px-8 py-4 rounded-full font-semibold border-2 border-pink-600 hover:bg-pink-50 transition-all">
+                  Comprar Productos
                 </Link>
               </div>
             </div>
@@ -141,8 +180,8 @@ export default function Home() {
                     </svg>
                   </div>
                   <div>
-                    <div className="font-bold text-gray-900">4.9/5</div>
-                    <div className="text-sm text-gray-600">+500 Clientes</div>
+                    <div className="font-bold text-gray-900">7 Años</div>
+                    <div className="text-sm text-gray-600">de Experiencia</div>
                   </div>
                 </div>
               </div>
@@ -151,61 +190,91 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Categories */}
-      <section className="py-16 bg-white">
+      {/* Services Section */}
+      <section id="servicios" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Nuestros Servicios</h2>
+            <p className="text-xl text-gray-600">Experiencias personalizadas que abracen el alma y eleven la belleza</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service) => (
+              <div key={service.id} className="group relative bg-gradient-to-br from-white to-pink-50 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-pink-100">
+                <div className={`text-5xl mb-4 transform group-hover:scale-110 transition-transform`}>
+                  {service.icon}
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">{service.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{service.description}</p>
+                <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${service.gradient} transform scale-x-0 group-hover:scale-x-100 transition-transform rounded-b-2xl`}></div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Instalaciones Section */}
+      <section id="instalaciones" className="py-20 bg-gradient-to-b from-pink-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Nuestras Instalaciones</h2>
+            <p className="text-xl text-gray-600">45 m² diseñados para tu comodidad y bienestar</p>
+          </div>
+
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all cursor-pointer">
-              <img 
-                src="https://images.unsplash.com/photo-1457972729786-0411a3b2b626?w=600&h=400&fit=crop" 
-                alt="Cejas"
-                className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
-                <div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Cejas</h3>
-                  <p className="text-white/90">Productos profesionales</p>
-                </div>
+            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all">
+              <div className="bg-gradient-to-br from-pink-100 to-purple-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                <span className="text-3xl">🏢</span>
               </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-3">4 Cubículos</h3>
+              <p className="text-gray-600 mb-4">Estaciones de trabajo especializadas:</p>
+              <ul className="space-y-2 text-gray-600">
+                <li className="flex items-start">
+                  <span className="text-pink-600 mr-2">•</span>
+                  <span>2 estaciones de pestañas</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-pink-600 mr-2">•</span>
+                  <span>1 estación de micropigmentación</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-pink-600 mr-2">•</span>
+                  <span>1 estación de faciales y depilación</span>
+                </li>
+              </ul>
             </div>
 
-            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all cursor-pointer">
-              <img 
-                src="https://images.unsplash.com/photo-1583001809515-0f9c8f6f9b8e?w=600&h=400&fit=crop" 
-                alt="Pestañas"
-                className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
-                <div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Pestañas</h3>
-                  <p className="text-white/90">Extensiones y cuidado</p>
-                </div>
+            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all">
+              <div className="bg-gradient-to-br from-purple-100 to-pink-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                <span className="text-3xl">🛍️</span>
               </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-3">Área de Productos</h3>
+              <p className="text-gray-600">
+                Exhibición de productos profesionales para el cuidado posterior de tus tratamientos. 
+                Todo lo que necesitas para mantener los resultados en casa.
+              </p>
             </div>
 
-            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all cursor-pointer">
-              <img 
-                src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&h=400&fit=crop" 
-                alt="Kits Profesionales"
-                className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
-                <div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Kits Profesionales</h3>
-                  <p className="text-white/90">Todo lo que necesitas</p>
-                </div>
+            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all">
+              <div className="bg-gradient-to-br from-pink-100 to-rose-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                <span className="text-3xl">☕</span>
               </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-3">Sala de Espera</h3>
+              <p className="text-gray-600">
+                Espacio acogedor y cómodo diseñado para tu relajación. Algunos servicios requieren 15 minutos de espera 
+                para resultados óptimos.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Featured Products */}
-      <section className="py-16 bg-gradient-to-b from-white to-pink-50">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Productos Destacados</h2>
-            <p className="text-xl text-gray-600">Descubre nuestra selección premium</p>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Productos Profesionales</h2>
+            <p className="text-xl text-gray-600">Insumos de alta calidad para profesionales de la belleza</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -217,7 +286,7 @@ export default function Home() {
                     alt={product.name}
                     className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
                   />
-                  <span className="absolute top-4 right-4 bg-pink-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                  <span className="absolute top-4 right-4 bg-gradient-to-r from-pink-600 to-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
                     {product.category}
                   </span>
                 </div>
@@ -250,7 +319,7 @@ export default function Home() {
       </section>
 
       {/* Features */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-gradient-to-b from-pink-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8">
             <div className="text-center">
@@ -259,8 +328,8 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <h3 className="font-bold text-gray-900 mb-2">Calidad Premium</h3>
-              <p className="text-gray-600">Productos certificados y de alta calidad</p>
+              <h3 className="font-bold text-gray-900 mb-2">7 Años de Experiencia</h3>
+              <p className="text-gray-600">Profesionales certificados y especializados</p>
             </div>
 
             <div className="text-center">
@@ -269,18 +338,18 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="font-bold text-gray-900 mb-2">Envío Gratis</h3>
-              <p className="text-gray-600">En compras mayores a $100</p>
+              <h3 className="font-bold text-gray-900 mb-2">Productos Premium</h3>
+              <p className="text-gray-600">Insumos profesionales de alta calidad</p>
             </div>
 
             <div className="text-center">
               <div className="bg-pink-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg className="w-8 h-8 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                 </svg>
               </div>
-              <h3 className="font-bold text-gray-900 mb-2">Soporte 24/7</h3>
-              <p className="text-gray-600">Estamos aquí para ayudarte</p>
+              <h3 className="font-bold text-gray-900 mb-2">Atención Personalizada</h3>
+              <p className="text-gray-600">Cada cliente es único y especial</p>
             </div>
 
             <div className="text-center">
@@ -289,21 +358,21 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
               </div>
-              <h3 className="font-bold text-gray-900 mb-2">Pago Seguro</h3>
-              <p className="text-gray-600">Transacciones 100% seguras</p>
+              <h3 className="font-bold text-gray-900 mb-2">Resultados Garantizados</h3>
+              <p className="text-gray-600">Técnicas probadas y efectivas</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Newsletter */}
-      <section className="py-16 bg-gradient-to-r from-pink-600 to-purple-600">
+      <section id="contacto" className="py-16 bg-gradient-to-r from-pink-600 to-purple-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Suscríbete a Nuestro Newsletter
+            Mantente Conectada
           </h2>
           <p className="text-xl text-white/90 mb-8">
-            Recibe ofertas exclusivas y consejos de belleza
+            Recibe ofertas exclusivas, consejos de belleza y novedades
           </p>
           <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
             <input 
@@ -327,27 +396,28 @@ export default function Home() {
                 Bellissime
               </h3>
               <p className="text-gray-400">
-                Especialistas en microblading, extensiones de pestañas y servicios profesionales de belleza en Miami, FL.
+                Transformando vidas a través del detalle. 7 años de experiencia en micropigmentación, 
+                extensiones de pestañas, faciales y depilación láser.
               </p>
+            </div>
+
+            <div>
+              <h4 className="font-bold mb-4">Servicios</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li><Link href="#servicios" className="hover:text-pink-400 transition-colors">Extensiones de Pestañas</Link></li>
+                <li><Link href="#servicios" className="hover:text-pink-400 transition-colors">Micropigmentación</Link></li>
+                <li><Link href="#servicios" className="hover:text-pink-400 transition-colors">Faciales</Link></li>
+                <li><Link href="#servicios" className="hover:text-pink-400 transition-colors">Depilación Láser</Link></li>
+              </ul>
             </div>
 
             <div>
               <h4 className="font-bold mb-4">Comprar</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><Link href="/productos/cejas" className="hover:text-pink-400 transition-colors">Cejas</Link></li>
-                <li><Link href="/productos/pestanas" className="hover:text-pink-400 transition-colors">Pestañas</Link></li>
-                <li><Link href="/productos/kits" className="hover:text-pink-400 transition-colors">Kits</Link></li>
-                <li><Link href="/ofertas" className="hover:text-pink-400 transition-colors">Ofertas</Link></li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-bold mb-4">Información</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><Link href="/sobre-nosotros" className="hover:text-pink-400 transition-colors">Sobre Nosotros</Link></li>
-                <li><Link href="/contacto" className="hover:text-pink-400 transition-colors">Contacto</Link></li>
-                <li><Link href="/envios" className="hover:text-pink-400 transition-colors">Envíos</Link></li>
-                <li><Link href="/devoluciones" className="hover:text-pink-400 transition-colors">Devoluciones</Link></li>
+                <li><Link href="/productos" className="hover:text-pink-400 transition-colors">Insumos de Micropigmentación</Link></li>
+                <li><Link href="/productos" className="hover:text-pink-400 transition-colors">Productos para Pestañas</Link></li>
+                <li><Link href="/productos" className="hover:text-pink-400 transition-colors">Cuidado Post-Tratamiento</Link></li>
+                <li><Link href="/productos" className="hover:text-pink-400 transition-colors">Kits Profesionales</Link></li>
               </ul>
             </div>
 

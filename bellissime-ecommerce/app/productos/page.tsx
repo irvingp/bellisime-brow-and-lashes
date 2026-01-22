@@ -8,90 +8,225 @@ export default function ProductosPage() {
   const [priceRange, setPriceRange] = useState([0, 500])
 
   const products = [
+    // Micropigmentación
     {
       id: 1,
-      name: "Microblading Kit Profesional",
-      price: 299.99,
+      name: "Kit Completo de Micropigmentación",
+      price: 499.99,
       image: "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=500&h=500&fit=crop",
-      category: "Cejas",
+      category: "Micropigmentación",
       rating: 5,
-      inStock: true
+      inStock: true,
+      description: "Kit profesional completo con todo lo necesario para micropigmentación"
     },
     {
       id: 2,
-      name: "Extensiones de Pestañas Premium",
-      price: 89.99,
-      image: "https://images.unsplash.com/photo-1583001809515-0f9c8f6f9b8e?w=500&h=500&fit=crop",
-      category: "Pestañas",
+      name: "Pigmentos Profesionales Set (12 colores)",
+      price: 189.99,
+      image: "https://images.unsplash.com/photo-1596704017254-9b121068ec31?w=500&h=500&fit=crop",
+      category: "Micropigmentación",
       rating: 5,
-      inStock: true
+      inStock: true,
+      description: "Set de 12 pigmentos de alta calidad para cejas"
     },
     {
       id: 3,
-      name: "Tinte para Cejas Orgánico",
-      price: 45.99,
-      image: "https://images.unsplash.com/photo-1596704017254-9b121068ec31?w=500&h=500&fit=crop",
-      category: "Cejas",
-      rating: 4,
-      inStock: true
+      name: "Agujas de Micropigmentación (50 unidades)",
+      price: 79.99,
+      image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=500&h=500&fit=crop",
+      category: "Micropigmentación",
+      rating: 5,
+      inStock: true,
+      description: "Agujas estériles desechables para microblading"
     },
     {
       id: 4,
-      name: "Sérum de Crecimiento para Pestañas",
-      price: 65.99,
-      image: "https://images.unsplash.com/photo-1571875257727-256c39da42af?w=500&h=500&fit=crop",
-      category: "Pestañas",
+      name: "Máquina de Micropigmentación Digital",
+      price: 349.99,
+      image: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=500&h=500&fit=crop",
+      category: "Micropigmentación",
       rating: 5,
-      inStock: true
+      inStock: true,
+      description: "Máquina digital profesional con control de velocidad"
     },
     {
       id: 5,
-      name: "Kit de Laminado de Cejas",
-      price: 129.99,
-      image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=500&h=500&fit=crop",
-      category: "Cejas",
-      rating: 5,
-      inStock: true
+      name: "Crema Anestésica Profesional",
+      price: 45.99,
+      image: "https://images.unsplash.com/photo-1571875257727-256c39da42af?w=500&h=500&fit=crop",
+      category: "Micropigmentación",
+      rating: 4,
+      inStock: true,
+      description: "Anestésico tópico para procedimientos de micropigmentación"
     },
     {
       id: 6,
-      name: "Adhesivo para Pestañas Profesional",
-      price: 34.99,
-      image: "https://images.unsplash.com/photo-1515688594390-b649af70d282?w=500&h=500&fit=crop",
-      category: "Pestañas",
+      name: "Plantillas de Cejas (100 pares)",
+      price: 29.99,
+      image: "https://images.unsplash.com/photo-1457972729786-0411a3b2b626?w=500&h=500&fit=crop",
+      category: "Micropigmentación",
       rating: 4,
-      inStock: true
+      inStock: true,
+      description: "Plantillas desechables para diseño de cejas perfectas"
     },
+    
+    // Extensiones de Pestañas
     {
       id: 7,
-      name: "Pinzas de Precisión para Cejas",
-      price: 24.99,
-      image: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=500&h=500&fit=crop",
-      category: "Herramientas",
+      name: "Extensiones de Pestañas Premium (Volumen Ruso)",
+      price: 89.99,
+      image: "https://images.unsplash.com/photo-1583001809515-0f9c8f6f9b8e?w=500&h=500&fit=crop",
+      category: "Extensiones de Pestañas",
       rating: 5,
-      inStock: true
+      inStock: true,
+      description: "Pestañas de seda premium para volumen ruso"
     },
     {
       id: 8,
-      name: "Gel Fijador de Cejas",
-      price: 19.99,
-      image: "https://images.unsplash.com/photo-1457972729786-0411a3b2b626?w=500&h=500&fit=crop",
-      category: "Cejas",
-      rating: 4,
-      inStock: true
+      name: "Adhesivo para Pestañas Profesional",
+      price: 34.99,
+      image: "https://images.unsplash.com/photo-1515688594390-b649af70d282?w=500&h=500&fit=crop",
+      category: "Extensiones de Pestañas",
+      rating: 5,
+      inStock: true,
+      description: "Adhesivo de secado rápido, hipoalergénico"
     },
     {
       id: 9,
       name: "Kit Completo de Extensiones",
       price: 199.99,
       image: "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=500&h=500&fit=crop",
-      category: "Pestañas",
+      category: "Extensiones de Pestañas",
       rating: 5,
-      inStock: false
+      inStock: true,
+      description: "Kit completo con pestañas, adhesivo y herramientas"
+    },
+    {
+      id: 10,
+      name: "Pinzas de Precisión para Pestañas",
+      price: 24.99,
+      image: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=500&h=500&fit=crop",
+      category: "Extensiones de Pestañas",
+      rating: 5,
+      inStock: true,
+      description: "Pinzas profesionales de acero inoxidable"
+    },
+    {
+      id: 11,
+      name: "Removedor de Extensiones",
+      price: 19.99,
+      image: "https://images.unsplash.com/photo-1571875257727-256c39da42af?w=500&h=500&fit=crop",
+      category: "Extensiones de Pestañas",
+      rating: 4,
+      inStock: true,
+      description: "Removedor suave y efectivo para extensiones"
+    },
+    {
+      id: 12,
+      name: "Sérum de Crecimiento para Pestañas",
+      price: 65.99,
+      image: "https://images.unsplash.com/photo-1571875257727-256c39da42af?w=500&h=500&fit=crop",
+      category: "Extensiones de Pestañas",
+      rating: 5,
+      inStock: true,
+      description: "Sérum nutritivo para fortalecer pestañas naturales"
+    },
+
+    // Productos Faciales
+    {
+      id: 13,
+      name: "Sérum Facial Vitamina C",
+      price: 55.99,
+      image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=500&h=500&fit=crop",
+      category: "Faciales",
+      rating: 5,
+      inStock: true,
+      description: "Sérum iluminador con vitamina C pura"
+    },
+    {
+      id: 14,
+      name: "Mascarilla Facial Hidratante",
+      price: 39.99,
+      image: "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=500&h=500&fit=crop",
+      category: "Faciales",
+      rating: 4,
+      inStock: true,
+      description: "Mascarilla de hidratación profunda"
+    },
+    {
+      id: 15,
+      name: "Limpiador Facial Profesional",
+      price: 29.99,
+      image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=500&h=500&fit=crop",
+      category: "Faciales",
+      rating: 5,
+      inStock: true,
+      description: "Limpiador suave para todo tipo de piel"
+    },
+
+    // Depilación Láser
+    {
+      id: 16,
+      name: "Gel Post-Depilación Láser",
+      price: 34.99,
+      image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=500&h=500&fit=crop",
+      category: "Depilación Láser",
+      rating: 5,
+      inStock: true,
+      description: "Gel calmante para después de depilación láser"
+    },
+    {
+      id: 17,
+      name: "Crema Protectora Pre-Láser",
+      price: 42.99,
+      image: "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=500&h=500&fit=crop",
+      category: "Depilación Láser",
+      rating: 4,
+      inStock: true,
+      description: "Protección para la piel antes del tratamiento"
+    },
+
+    // Cuidado Post-Tratamiento
+    {
+      id: 18,
+      name: "Kit de Cuidado Post-Micropigmentación",
+      price: 45.99,
+      image: "https://images.unsplash.com/photo-1571875257727-256c39da42af?w=500&h=500&fit=crop",
+      category: "Cuidado Post-Tratamiento",
+      rating: 5,
+      inStock: true,
+      description: "Kit completo para cuidado posterior"
+    },
+    {
+      id: 19,
+      name: "Bálsamo Cicatrizante",
+      price: 24.99,
+      image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=500&h=500&fit=crop",
+      category: "Cuidado Post-Tratamiento",
+      rating: 5,
+      inStock: true,
+      description: "Bálsamo para acelerar la cicatrización"
+    },
+    {
+      id: 20,
+      name: "Spray Antibacterial",
+      price: 18.99,
+      image: "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=500&h=500&fit=crop",
+      category: "Cuidado Post-Tratamiento",
+      rating: 4,
+      inStock: true,
+      description: "Spray protector antibacterial"
     }
   ]
 
-  const categories = ['Todos', 'Cejas', 'Pestañas', 'Herramientas', 'Kits']
+  const categories = [
+    'Todos', 
+    'Micropigmentación', 
+    'Extensiones de Pestañas', 
+    'Faciales', 
+    'Depilación Láser',
+    'Cuidado Post-Tratamiento'
+  ]
 
   const filteredProducts = products.filter(product => {
     const categoryMatch = selectedCategory === 'Todos' || product.category === selectedCategory
@@ -115,9 +250,9 @@ export default function ProductosPage() {
             <div className="hidden md:flex space-x-8">
               <Link href="/" className="text-gray-700 hover:text-pink-600 transition-colors font-medium">Inicio</Link>
               <Link href="/productos" className="text-pink-600 font-bold">Productos</Link>
-              <Link href="/servicios" className="text-gray-700 hover:text-pink-600 transition-colors font-medium">Servicios</Link>
-              <Link href="/sobre-nosotros" className="text-gray-700 hover:text-pink-600 transition-colors font-medium">Sobre Nosotros</Link>
-              <Link href="/contacto" className="text-gray-700 hover:text-pink-600 transition-colors font-medium">Contacto</Link>
+              <Link href="/#servicios" className="text-gray-700 hover:text-pink-600 transition-colors font-medium">Servicios</Link>
+              <Link href="/#instalaciones" className="text-gray-700 hover:text-pink-600 transition-colors font-medium">Instalaciones</Link>
+              <Link href="/#contacto" className="text-gray-700 hover:text-pink-600 transition-colors font-medium">Contacto</Link>
             </div>
 
             <div className="flex items-center space-x-4">
@@ -139,8 +274,8 @@ export default function ProductosPage() {
       {/* Page Header */}
       <section className="bg-gradient-to-r from-pink-600 to-purple-600 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Nuestros Productos</h1>
-          <p className="text-xl text-white/90">Calidad profesional para resultados excepcionales</p>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Productos Profesionales</h1>
+          <p className="text-xl text-white/90">Insumos de alta calidad para profesionales de la belleza</p>
         </div>
       </section>
 
@@ -149,17 +284,17 @@ export default function ProductosPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-8">
             {/* Filters Sidebar */}
-            <aside className="lg:w-64 space-y-6">
+            <aside className="lg:w-72 space-y-6">
               <div className="bg-white rounded-2xl shadow-lg p-6">
-                <h3 className="font-bold text-gray-900 mb-4">Categorías</h3>
+                <h3 className="font-bold text-gray-900 mb-4 text-lg">Categorías</h3>
                 <div className="space-y-2">
                   {categories.map((category) => (
                     <button
                       key={category}
                       onClick={() => setSelectedCategory(category)}
-                      className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${
+                      className={`w-full text-left px-4 py-3 rounded-lg transition-all text-sm ${
                         selectedCategory === category
-                          ? 'bg-gradient-to-r from-pink-600 to-purple-600 text-white'
+                          ? 'bg-gradient-to-r from-pink-600 to-purple-600 text-white font-semibold shadow-md'
                           : 'hover:bg-pink-50 text-gray-700'
                       }`}
                     >
@@ -182,7 +317,7 @@ export default function ProductosPage() {
                     max="500"
                     value={priceRange[1]}
                     onChange={(e) => setPriceRange([0, parseInt(e.target.value)])}
-                    className="w-full"
+                    className="w-full accent-pink-600"
                   />
                 </div>
               </div>
@@ -190,7 +325,7 @@ export default function ProductosPage() {
               <div className="bg-gradient-to-br from-pink-100 to-purple-100 rounded-2xl p-6">
                 <h3 className="font-bold text-gray-900 mb-2">¿Necesitas ayuda?</h3>
                 <p className="text-sm text-gray-600 mb-4">Nuestro equipo está listo para asesorarte</p>
-                <Link href="/contacto" className="block text-center bg-white text-pink-600 px-4 py-2 rounded-full font-semibold hover:shadow-lg transition-all">
+                <Link href="/#contacto" className="block text-center bg-white text-pink-600 px-4 py-2 rounded-full font-semibold hover:shadow-lg transition-all">
                   Contactar
                 </Link>
               </div>
@@ -200,7 +335,7 @@ export default function ProductosPage() {
             <div className="flex-1">
               <div className="flex justify-between items-center mb-6">
                 <p className="text-gray-600">
-                  Mostrando <span className="font-semibold">{filteredProducts.length}</span> productos
+                  Mostrando <span className="font-semibold text-pink-600">{filteredProducts.length}</span> productos
                 </p>
                 <select className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-pink-600">
                   <option>Más Recientes</option>
@@ -226,12 +361,13 @@ export default function ProductosPage() {
                           </span>
                         </div>
                       )}
-                      <span className="absolute top-4 right-4 bg-pink-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                      <span className="absolute top-4 right-4 bg-gradient-to-r from-pink-600 to-purple-600 text-white px-3 py-1 rounded-full text-xs font-semibold">
                         {product.category}
                       </span>
                     </div>
                     <div className="p-6">
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">{product.name}</h3>
+                      <h3 className="text-lg font-bold text-gray-900 mb-2 line-clamp-2">{product.name}</h3>
+                      <p className="text-sm text-gray-600 mb-3 line-clamp-2">{product.description}</p>
                       <div className="flex items-center mb-3">
                         <div className="flex text-yellow-400">
                           {[...Array(5)].map((_, i) => (
@@ -287,27 +423,27 @@ export default function ProductosPage() {
                 Bellissime
               </h3>
               <p className="text-gray-400">
-                Tu destino para productos profesionales de cejas y pestañas.
+                Insumos profesionales de micropigmentación y extensiones de pestañas. 7 años de experiencia.
               </p>
             </div>
 
             <div>
-              <h4 className="font-bold mb-4">Comprar</h4>
+              <h4 className="font-bold mb-4">Categorías</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><Link href="/productos" className="hover:text-pink-400 transition-colors">Todos los Productos</Link></li>
-                <li><Link href="/productos?category=cejas" className="hover:text-pink-400 transition-colors">Cejas</Link></li>
-                <li><Link href="/productos?category=pestanas" className="hover:text-pink-400 transition-colors">Pestañas</Link></li>
-                <li><Link href="/ofertas" className="hover:text-pink-400 transition-colors">Ofertas</Link></li>
+                <li><Link href="/productos" className="hover:text-pink-400 transition-colors">Micropigmentación</Link></li>
+                <li><Link href="/productos" className="hover:text-pink-400 transition-colors">Extensiones de Pestañas</Link></li>
+                <li><Link href="/productos" className="hover:text-pink-400 transition-colors">Faciales</Link></li>
+                <li><Link href="/productos" className="hover:text-pink-400 transition-colors">Depilación Láser</Link></li>
               </ul>
             </div>
 
             <div>
               <h4 className="font-bold mb-4">Información</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><Link href="/sobre-nosotros" className="hover:text-pink-400 transition-colors">Sobre Nosotros</Link></li>
-                <li><Link href="/contacto" className="hover:text-pink-400 transition-colors">Contacto</Link></li>
-                <li><Link href="/envios" className="hover:text-pink-400 transition-colors">Envíos</Link></li>
-                <li><Link href="/devoluciones" className="hover:text-pink-400 transition-colors">Devoluciones</Link></li>
+                <li><Link href="/" className="hover:text-pink-400 transition-colors">Inicio</Link></li>
+                <li><Link href="/#servicios" className="hover:text-pink-400 transition-colors">Servicios</Link></li>
+                <li><Link href="/#instalaciones" className="hover:text-pink-400 transition-colors">Instalaciones</Link></li>
+                <li><Link href="/#contacto" className="hover:text-pink-400 transition-colors">Contacto</Link></li>
               </ul>
             </div>
 
