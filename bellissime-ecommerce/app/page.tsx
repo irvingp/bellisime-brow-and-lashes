@@ -3,8 +3,15 @@
 import { useState } from 'react'
 import Link from 'next/link'
 
+interface CartItem {
+  id: number;
+  name: string;
+  price: number;
+  quantity: number;
+}
+
 export default function Home() {
-  const [cart, setCart] = useState<any[]>([])
+  const [cart, setCart] = useState<CartItem[]>([])
 
   const featuredProducts = [
     {
@@ -107,7 +114,7 @@ export default function Home() {
                 Realza tu <span className="bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">Belleza Natural</span>
               </h1>
               <p className="text-xl text-gray-600">
-                Productos profesionales para cejas y pestañas. Calidad premium para resultados excepcionales.
+                Especialistas en microblading, extensiones de pestañas, laminado y tinte. Productos profesionales de alta calidad desde Miami, FL.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link href="/productos" className="bg-gradient-to-r from-pink-600 to-purple-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg transition-all transform hover:scale-105">
@@ -320,7 +327,7 @@ export default function Home() {
                 Bellissime
               </h3>
               <p className="text-gray-400">
-                Tu destino para productos profesionales de cejas y pestañas.
+                Especialistas en microblading, extensiones de pestañas y servicios profesionales de belleza en Miami, FL.
               </p>
             </div>
 

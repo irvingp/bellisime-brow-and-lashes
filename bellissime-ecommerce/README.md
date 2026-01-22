@@ -1,10 +1,22 @@
 # Bellissime Brow & Lashes - E-commerce
 
-Sitio web de comercio electrónico profesional para productos de cejas y pestañas, inspirado en la plantilla **Astra + WooCommerce** de WordPress.
+Sitio web de comercio electrónico profesional para **Bellissime Brow and Lashes**, especialistas en servicios de cejas y pestañas con sede en Miami, FL.
+
+## 🏢 Acerca del Negocio
+
+**Bellissime Brow and Lashes** es un salón de belleza especializado en:
+- Microblading y diseño de cejas
+- Extensiones de pestañas
+- Laminado de cejas y pestañas
+- Tinte de cejas y pestañas
+- Servicios profesionales de belleza facial
+
+**Ubicación**: Miami, FL  
+**Contacto**: [Información disponible en el sitio web]
 
 ## 🎨 Diseño y Colores
 
-El diseño utiliza una paleta de colores elegante y femenina:
+El diseño utiliza una paleta de colores elegante y femenina inspirada en la identidad de marca:
 - **Rosa Principal**: `#DB2777` (pink-600)
 - **Púrpura Acento**: `#9333EA` (purple-600)
 - **Gradientes**: Combinaciones de rosa a púrpura para elementos destacados
@@ -14,7 +26,7 @@ El diseño utiliza una paleta de colores elegante y femenina:
 
 - **Framework**: Next.js 16.1.4 con App Router
 - **Lenguaje**: TypeScript
-- **Estilos**: Tailwind CSS
+- **Estilos**: Tailwind CSS v4
 - **Imágenes**: Unsplash (configurado en next.config.ts)
 
 ## 📋 Características
@@ -58,22 +70,41 @@ El diseño utiliza una paleta de colores elegante y femenina:
 
 ## 🚀 Instalación y Uso
 
+### Prerrequisitos
+
+- Node.js 20.x o superior
+- npm o yarn
+
+### Instalación
+
 ```bash
-# Navegar al directorio del proyecto
+# 1. Clonar el repositorio (si aplica)
+git clone <repository-url>
+
+# 2. Navegar al directorio del proyecto
 cd bellissime-ecommerce
 
-# Instalar dependencias (ya instaladas)
+# 3. Instalar dependencias
 npm install
+```
 
-# Modo desarrollo
+### Comandos Disponibles
+
+```bash
+# Modo desarrollo (puerto 3000 por defecto)
 npm run dev
 
 # Compilar para producción
 npm run build
 
-# Iniciar en producción
+# Iniciar en producción (después de build)
 npm start
+
+# Ejecutar linter
+npm run lint
 ```
+
+### Acceso Local
 
 El sitio estará disponible en `http://localhost:3000`
 
